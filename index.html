@@ -4,318 +4,336 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ── SEO ── -->
-  <title>Cuban Cargo – Envíos a Cuba desde cualquier país</title>
-  <meta name="description" content="Envía electrodomésticos, equipos solares y más a Cuba de forma rápida y segura. Compra desde cualquier país y recibe en Cuba con garantía de entrega. Síguenos en Instagram, WhatsApp y YouTube." />
+  <title>Cuban Cargo – Envíos a Cuba</title>
+  <meta name="description" content="Envía electrodomésticos, equipos solares y más a Cuba de forma rápida y segura. Compra desde cualquier país y recibe en Cuba con garantía de entrega." />
   <meta name="keywords" content="envios a cuba, enviar paquetes a cuba, electrodomesticos cuba, equipos solares cuba, cuban cargo, envio garantizado cuba" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cubancargos.github.io/" />
 
-  <!-- ── Open Graph ── -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cubancargos.github.io/" />
   <meta property="og:title" content="Cuban Cargo – Envíos a Cuba" />
   <meta property="og:description" content="Envía electrodomésticos y equipos solares a Cuba con garantía de entrega. Rápido, seguro y desde cualquier país." />
-  <meta property="og:image" content="https://cubancargos.com/og-image.jpg" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Cuban Cargo" />
-
-  <!-- ── Twitter Card ── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cuban Cargo – Envíos a Cuba" />
   <meta name="twitter:description" content="Envía electrodomésticos y equipos solares a Cuba con garantía de entrega." />
-  <meta name="twitter:image" content="https://cubancargos.com/og-image.jpg" />
 
-  <!-- ── JSON-LD ── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Cuban Cargo",
     "url": "https://cubancargos.com",
-    "logo": "https://cubancargos.com/logo.png",
     "description": "Envíos de electrodomésticos y equipos solares a Cuba desde cualquier país, con garantía de entrega.",
     "sameAs": [
       "https://www.instagram.com/cubancargo",
       "https://www.youtube.com/@cubancargo",
       "https://whatsapp.com/channel/0029VbBk9aI9xVJbY1uOGb24"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "availableLanguage": ["Spanish"]
-    }
+    ]
   }
   </script>
 
-  <!-- ── Tailwind CDN ── -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Syne', 'sans-serif'],
-            body: ['DM Sans', 'sans-serif'],
-          },
-          colors: {
-            cuba: {
-              red:    '#D4231A',
-              blue:   '#0B2E6E',
-              gold:   '#E8B84B',
-              cream:  '#FAF6EE',
-              dark:   '#0D0D0D',
-            }
-          },
-          keyframes: {
-            'fade-up': {
-              '0%':   { opacity: '0', transform: 'translateY(18px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-            'shimmer': {
-              '0%,100%': { opacity: '1' },
-              '50%':     { opacity: '0.6' },
-            },
-            'float': {
-              '0%,100%': { transform: 'translateY(0px)' },
-              '50%':     { transform: 'translateY(-6px)' },
-            }
-          },
-          animation: {
-            'fade-up':  'fade-up 0.6s ease both',
-            'shimmer':  'shimmer 2.5s ease-in-out infinite',
-            'float':    'float 4s ease-in-out infinite',
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet" />
 
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --cuba-red:   #D4231A;
-      --cuba-blue:  #0B2E6E;
-      --cuba-gold:  #E8B84B;
-      --cuba-cream: #FAF6EE;
+      --red:   #D4231A;
+      --blue:  #0B2E6E;
+      --gold:  #E8B84B;
+      --cream: #F7F3EA;
+      --dark:  #111111;
     }
 
-    * { box-sizing: border-box; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cuba-cream); }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background-color: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 56px 20px 40px;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-    /* Staggered reveal */
-    .reveal { opacity: 0; animation: fade-up 0.55s ease both; }
+    /* Background blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      width: 380px; height: 380px;
+      background: rgba(212, 35, 26, 0.15);
+      top: -80px; right: -80px;
+    }
+    body::after {
+      width: 320px; height: 320px;
+      background: rgba(11, 46, 110, 0.12);
+      bottom: 60px; left: -60px;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Staggered fade-up */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { animation: fadeUp 0.55s ease both; }
     .d1 { animation-delay: 0.05s; }
     .d2 { animation-delay: 0.15s; }
     .d3 { animation-delay: 0.25s; }
-    .d4 { animation-delay: 0.32s; }
-    .d5 { animation-delay: 0.39s; }
-    .d6 { animation-delay: 0.46s; }
-    .d7 { animation-delay: 0.53s; }
-    .d8 { animation-delay: 0.60s; }
+    .d4 { animation-delay: 0.33s; }
+    .d5 { animation-delay: 0.41s; }
+    .d6 { animation-delay: 0.49s; }
+    .d7 { animation-delay: 0.57s; }
+    .d8 { animation-delay: 0.65s; }
 
-    /* Noise grain texture overlay */
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-      opacity: 0.35;
+    /* Avatar */
+    @keyframes spinRing { to { transform: rotate(360deg); } }
+    .avatar-wrap { position: relative; width: 88px; height: 88px; display: flex; align-items: center; justify-content: center; }
+    .avatar-ring { position: absolute; inset: 0; animation: spinRing 9s linear infinite; }
+    .avatar-inner {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue) 0%, #1a55c8 100%);
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid white;
+      box-shadow: 0 8px 24px rgba(11,46,110,0.25);
     }
 
-    /* Background decorative circles */
-    .bg-blob {
-      position: fixed; border-radius: 50%; filter: blur(80px);
-      pointer-events: none; z-index: 0;
+    /* Name block */
+    .name-block { text-align: center; }
+    .name-block h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px; font-weight: 800;
+      color: var(--dark); letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .name-block p {
+      font-size: 13px; font-weight: 500;
+      color: #666; margin-top: 4px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      margin-top: 8px; padding: 3px 10px;
+      border-radius: 99px; font-size: 11px; font-weight: 600;
+      border: 1.5px solid var(--gold);
+      color: var(--red);
+      background: rgba(232,184,75,0.1);
     }
 
-    /* Link card hover */
+    /* Link cards */
     .link-card {
+      display: flex; align-items: center; gap: 14px;
+      width: 100%; padding: 14px 16px;
+      border-radius: 16px;
+      text-decoration: none; color: white;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
       position: relative; overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .link-card:hover  { transform: translateY(-2px); }
-    .link-card:active { transform: translateY(0px) scale(0.98); }
     .link-card::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(255,255,255,0.13) 0%, transparent 55%);
       pointer-events: none;
     }
+    .link-card:hover  { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.16); }
+    .link-card:active { transform: scale(0.98); }
 
-    /* Avatar ring animation */
-    @keyframes spin-ring {
-      to { transform: rotate(360deg); }
+    .card-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
     }
-    .avatar-ring {
-      animation: spin-ring 8s linear infinite;
+    .card-text { flex: 1; min-width: 0; }
+    .card-label { font-size: 11px; font-weight: 500; opacity: 0.72; line-height: 1; margin-bottom: 3px; }
+    .card-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; line-height: 1.2; }
+    .card-arrow { flex-shrink: 0; opacity: 0.65; }
+
+    /* Gradient backgrounds */
+    .bg-blue  { background: linear-gradient(135deg, #0B2E6E 0%, #1a5bcc 100%); }
+    .bg-insta { background: linear-gradient(135deg, #f9ce34, #ee2a7b 40%, #6228d7); }
+    .bg-wa    { background: linear-gradient(135deg, #128C7E 0%, #25D366 100%); }
+    .bg-yt    { background: linear-gradient(135deg, #a50000 0%, #ff0000 100%); }
+
+    /* Trust strip */
+    .trust-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 8px; width: 100%; margin-top: 4px;
     }
+    .trust-item {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 4px; padding: 12px 8px; border-radius: 14px;
+      text-align: center;
+    }
+    .trust-item span.emoji { font-size: 20px; }
+    .trust-item .t-title { font-size: 11px; font-weight: 700; line-height: 1.2; }
+    .trust-item .t-sub   { font-size: 10px; opacity: 0.55; color: var(--dark); line-height: 1.2; }
+
+    .trust-blue  { background: rgba(11,46,110,0.07); }
+    .trust-red   { background: rgba(212,35,26,0.07); }
+    .trust-gold  { background: rgba(232,184,75,0.13); }
+
+    /* Footer */
+    footer { text-align: center; font-size: 11px; color: #aaa; margin-top: 6px; }
+    footer a { color: #aaa; text-decoration: underline; text-underline-offset: 2px; }
+    footer a:hover { color: #666; }
+
+    /* Arrow SVG */
+    .arrow { display: block; }
   </style>
 </head>
 
-<body class="min-h-screen flex flex-col items-center justify-start py-16 px-4 relative">
+<body>
+  <main>
 
-  <!-- Background blobs -->
-  <div class="bg-blob w-96 h-96 bg-red-300 opacity-20 top-[-60px] right-[-80px]"></div>
-  <div class="bg-blob w-80 h-80 bg-blue-300 opacity-15 bottom-40 left-[-60px]"></div>
-  <div class="bg-blob w-64 h-64" style="background:var(--cuba-gold);opacity:0.12;bottom:-40px;right:20px;"></div>
-
-  <main class="relative z-10 w-full max-w-sm flex flex-col items-center gap-5">
-
-    <!-- ── Avatar ───────────────────────────────────────────────── -->
-    <div class="reveal d1 relative flex items-center justify-center">
-      <!-- Spinning dashed ring -->
-      <svg class="avatar-ring absolute" width="96" height="96" viewBox="0 0 96 96" fill="none">
-        <circle cx="48" cy="48" r="44" stroke="url(#ring-grad)" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
+    <!-- Avatar -->
+    <div class="avatar-wrap reveal d1">
+      <svg class="avatar-ring" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="44" cy="44" r="40" stroke="url(#rg)" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
         <defs>
-          <linearGradient id="ring-grad" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#D4231A"/>
-            <stop offset="50%" stop-color="#E8B84B"/>
+          <linearGradient id="rg" x1="0" y1="0" x2="88" y2="88" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#D4231A"/>
+            <stop offset="50%"  stop-color="#E8B84B"/>
             <stop offset="100%" stop-color="#0B2E6E"/>
           </linearGradient>
         </defs>
       </svg>
-      <!-- Logo / avatar -->
-      <div class="w-20 h-20 rounded-full flex items-center justify-center shadow-xl overflow-hidden border-2 border-white"
-           style="background: linear-gradient(135deg, var(--cuba-blue) 0%, #1a4a9e 100%);">
-        <!-- Inline SVG plane icon as placeholder logo -->
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <div class="avatar-inner">
+        <!-- Plane icon -->
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5c-1.5-1.5-3.5-1.5-5 0L11 6 2.8 4.2c-.5-.1-.9.1-1.1.5L.2 6.3c-.2.4-.1.9.2 1.2L6 12l-2 3H2l-1 1 2 2 2 2 1-1v-2l3-2 4.8 5.6c.3.3.8.4 1.2.2l1.6-1.6c.4-.2.6-.6.5-1.1z"/>
         </svg>
       </div>
     </div>
 
-    <!-- ── Name & tagline ─────────────────────────────────────────── -->
-    <div class="reveal d2 text-center space-y-1">
-      <h1 class="text-3xl font-display font-extrabold tracking-tight" style="font-family:'Syne',sans-serif;color:var(--cuba-dark);">
-        Cuban Cargo
-      </h1>
-      <p class="text-sm font-medium" style="color:#555;">
-        Envíos a Cuba · Rápido · Seguro · Garantizado
-      </p>
-      <!-- Flag strip -->
-      <div class="flex items-center justify-center gap-1.5 mt-1">
-        <span class="text-base">🇨🇺</span>
-        <span class="text-xs font-semibold px-2 py-0.5 rounded-full border" style="border-color:var(--cuba-gold);color:var(--cuba-red);background:rgba(232,184,75,0.1);">
-          +1,000 familias atendidas
-        </span>
-        <span class="text-base">🇨🇺</span>
-      </div>
+    <!-- Name & tagline -->
+    <div class="name-block reveal d2">
+      <h1>Cuban Cargo</h1>
+      <p>Envíos a Cuba · Rápido · Seguro · Garantizado</p>
+      <div class="badge">🇨🇺 +1,000 familias atendidas 🇨🇺</div>
     </div>
 
-    <!-- ── Links ──────────────────────────────────────────────────── -->
-
-    <!-- Main CTA — Website -->
+    <!-- Website -->
     <a href="https://cubancargos.com" target="_blank" rel="noopener"
-       aria-label="Visita nuestra tienda en cubancargos.com"
-       class="link-card reveal d3 w-full flex items-center gap-4 px-5 py-4 rounded-2xl text-white shadow-lg"
-       style="background:linear-gradient(135deg, var(--cuba-blue) 0%, #1558c8 100%);">
-      <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
-        <!-- Globe icon -->
+       class="link-card bg-blue reveal d3"
+       aria-label="Visita nuestra tienda cubancargos.com">
+      <div class="card-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
-      </span>
-      <div class="flex-1 min-w-0">
-        <p class="text-xs font-medium opacity-70 leading-none mb-0.5">Tienda oficial</p>
-        <p class="font-semibold text-sm leading-tight" style="font-family:'Syne',sans-serif;">cubancargos.com</p>
       </div>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <div class="card-text">
+        <div class="card-label">Tienda oficial</div>
+        <div class="card-title">cubancargos.com</div>
+      </div>
+      <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
     </a>
 
     <!-- Instagram -->
     <a href="https://www.instagram.com/cubancargo" target="_blank" rel="noopener"
-       aria-label="Síguenos en Instagram @cubancargo"
-       class="link-card reveal d4 w-full flex items-center gap-4 px-5 py-4 rounded-2xl shadow-md"
-       style="background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);color:white;">
-      <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+       class="link-card bg-insta reveal d4"
+       aria-label="Síguenos en Instagram @cubancargo">
+      <div class="card-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
         </svg>
-      </span>
-      <div class="flex-1 min-w-0">
-        <p class="text-xs font-medium opacity-75 leading-none mb-0.5">Instagram</p>
-        <p class="font-semibold text-sm leading-tight" style="font-family:'Syne',sans-serif;">@cubancargo</p>
       </div>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <div class="card-text">
+        <div class="card-label">Instagram</div>
+        <div class="card-title">@cubancargo</div>
+      </div>
+      <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
     </a>
 
-    <!-- WhatsApp Channel -->
+    <!-- WhatsApp -->
     <a href="https://whatsapp.com/channel/0029VbBk9aI9xVJbY1uOGb24" target="_blank" rel="noopener"
-       aria-label="Únete a nuestro canal de WhatsApp"
-       class="link-card reveal d5 w-full flex items-center gap-4 px-5 py-4 rounded-2xl shadow-md text-white"
-       style="background:linear-gradient(135deg,#128C7E 0%,#25D366 100%);">
-      <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+       class="link-card bg-wa reveal d5"
+       aria-label="Únete a nuestro canal de WhatsApp">
+      <div class="card-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-      </span>
-      <div class="flex-1 min-w-0">
-        <p class="text-xs font-medium opacity-75 leading-none mb-0.5">Canal de WhatsApp</p>
-        <p class="font-semibold text-sm leading-tight" style="font-family:'Syne',sans-serif;">Ofertas y novedades</p>
       </div>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <div class="card-text">
+        <div class="card-label">Canal de WhatsApp</div>
+        <div class="card-title">Ofertas y novedades</div>
+      </div>
+      <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
     </a>
 
     <!-- YouTube -->
     <a href="https://www.youtube.com/@cubancargo" target="_blank" rel="noopener"
-       aria-label="Visítanos en YouTube @cubancargo"
-       class="link-card reveal d6 w-full flex items-center gap-4 px-5 py-4 rounded-2xl shadow-md text-white"
-       style="background:linear-gradient(135deg,#c4302b 0%,#ff0000 100%);">
-      <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+       class="link-card bg-yt reveal d6"
+       aria-label="Visítanos en YouTube @cubancargo">
+      <div class="card-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
           <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
         </svg>
-      </span>
-      <div class="flex-1 min-w-0">
-        <p class="text-xs font-medium opacity-75 leading-none mb-0.5">YouTube</p>
-        <p class="font-semibold text-sm leading-tight" style="font-family:'Syne',sans-serif;">@cubancargo</p>
       </div>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <div class="card-text">
+        <div class="card-label">YouTube</div>
+        <div class="card-title">@cubancargo</div>
+      </div>
+      <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
     </a>
 
-    <!-- ── Trust strip ─────────────────────────────────────────────── -->
-    <div class="reveal d7 w-full grid grid-cols-3 gap-2 mt-1">
-      <div class="flex flex-col items-center gap-1 py-3 px-2 rounded-xl text-center"
-           style="background:rgba(11,46,110,0.06);">
-        <span class="text-xl">🚀</span>
-        <p class="text-xs font-semibold" style="color:var(--cuba-blue);">Envío rápido</p>
-        <p class="text-xs opacity-60" style="color:var(--cuba-dark);">7–15 días</p>
+    <!-- Trust strip -->
+    <div class="trust-grid reveal d7">
+      <div class="trust-item trust-blue">
+        <span class="emoji">🚀</span>
+        <span class="t-title" style="color:#0B2E6E;">Envío rápido</span>
+        <span class="t-sub">7–15 días</span>
       </div>
-      <div class="flex flex-col items-center gap-1 py-3 px-2 rounded-xl text-center"
-           style="background:rgba(212,35,26,0.06);">
-        <span class="text-xl">🛡️</span>
-        <p class="text-xs font-semibold" style="color:var(--cuba-red);">Garantizado</p>
-        <p class="text-xs opacity-60" style="color:var(--cuba-dark);">o reembolso</p>
+      <div class="trust-item trust-red">
+        <span class="emoji">🛡️</span>
+        <span class="t-title" style="color:#D4231A;">Garantizado</span>
+        <span class="t-sub">o reembolso</span>
       </div>
-      <div class="flex flex-col items-center gap-1 py-3 px-2 rounded-xl text-center"
-           style="background:rgba(232,184,75,0.12);">
-        <span class="text-xl">🌍</span>
-        <p class="text-xs font-semibold" style="color:#8a6500;">Todo el mundo</p>
-        <p class="text-xs opacity-60" style="color:var(--cuba-dark);">cualquier país</p>
+      <div class="trust-item trust-gold">
+        <span class="emoji">🌍</span>
+        <span class="t-title" style="color:#8a6500;">Todo el mundo</span>
+        <span class="t-sub">cualquier país</span>
       </div>
     </div>
 
-    <!-- ── Footer ────────────────────────────────────────────────────── -->
-    <footer class="reveal d8 text-center mt-2">
-      <p class="text-xs" style="color:#999;">
-        © 2026 Cuban Cargo · <a href="https://cubancargos.com" class="underline underline-offset-2 hover:opacity-80" style="color:#999;">cubancargos.com</a>
-      </p>
+    <!-- Footer -->
+    <footer class="reveal d8">
+      <p>© 2025 Cuban Cargo · <a href="https://cubancargos.com">cubancargos.com</a></p>
     </footer>
 
   </main>
